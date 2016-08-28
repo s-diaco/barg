@@ -1,0 +1,47 @@
+<?php
+require_once("convert_date.class");
+require_once("item_manager.class");
+class entries_manager extends item_manager
+{
+	function __construct($nPost)
+	{
+		if(isset($_GET['mode']))
+		{
+		$this->getEntries($nPost, $_GET['mode']);
+		}
+		else{
+		$this->getEntries($nPost, 1);}
+	}
+	private function getEntries($nPost, $mode)
+	{
+		if($mode == "2")
+		{
+			// Show archive
+			$c_d = new convert_date();
+			$fDate = $c_d->jalali_to_gregorian($_GET[year], $_GET[month], 1);
+			$fDate = date('Y-m-d h:i:s', mktime(1,0,0, $fDate[1], $fDate[2], $fDate[0]));
+			$tDate = $c_d->jalali_to_gregorian($_GET[year], $_GET[month] + 1, 1);
+			$tDate = date('Y-m-d h:i:s', mktime(1,0,0, $tDate[1], $tDate[2], $tDate[0]));
+			$sql = "SELECT * FROM barg_entries WHERE addedDate BETWEEN '$fDate' AND '$tDate' ORDER BY addedDate DESC";
+		}
+		elseif($mode == "3")
+		{
+			// Show one entry
+			$sql = "SELECT * FROM barg_entries WHERE id=".$_GET['id'].";";
+		}
+		else
+		{
+			$sql = "SELECT * FROM barg_entries ORDER BY addedDate DESC LIMIT 0, ".$nPost.";";
+		}
+		mysql_query("SET NAMES 'utf8' " ); 
+		
+		$this->resource = mysql_query($sql);
+		$this->nRows = mysql_num_rows($this->resource);
+	}
+	function query_posts($string)
+	{
+		$this->currentRow = 0;
+		$this->getEntries(10, 1);
+	}
+}
+?>

@@ -1,0 +1,44 @@
+<?php
+require_once( "format_string.class" );
+
+/*	This class gets a resource and a row number to manage the row.
+	"entry" and "comment" classes will extend this.
+	"March 28, 2008"	*/
+	
+class row_manager
+{
+	protected $row;
+	function __construct( $resource, $row_number )
+	{
+		if( mysql_data_seek ( $resource, $row_number ) )
+		{
+			$this->row = mysql_fetch_assoc($resource);
+		}
+	}
+	
+	function getColumn($columnName)
+	{
+		if ( isset($this->row) && (!is_null($this->row)) )
+		{
+			return $this->row[$columnName];
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	function getAddedDate( $formatString )
+	{
+		if ( isset($this->row) && (!is_null($this->row)) )
+		{
+			$f_s = new format_string();
+			return $f_s->formatAddedDate( $this->row["addedDate"], $formatString );
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
+?>

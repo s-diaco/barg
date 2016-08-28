@@ -1,0 +1,16 @@
+<?php
+class search
+{
+	private function generateQueryString($string)
+	{
+		$queryString = "SELECT * FROM barg_entries WHERE MATCH (title, bText, bText2) AGAINST ". $string;
+		return $queryString;
+	}
+	function find($string)
+	{
+		$queryString = $this->generateQueryString($string);
+		mysql_query("SET NAMES 'utf8' " );
+		return mysql_query($queryString);
+	}
+}
+?>

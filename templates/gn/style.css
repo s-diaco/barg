@@ -1,0 +1,445 @@
+/*
+    Theme Name: Gotham Nights
+    Theme URI: http://www.evaneckard.com/
+    Description: Gotham Nights is a wordpress theme by <a href="http://www.evaneckard.com">Evan Eckard</a>
+    Version: 1.0
+    Author: Evan Eckard
+    Author URI: http://www.evaneckard.com/
+*/
+
+body
+{
+	margin: 0px;
+	text-align: center;
+	background-color: #333;
+	background-image: url(images/pageBack.png);
+	background-repeat: repeat-x;
+}
+#outer
+{
+	margin: 0px auto 0px auto;
+	border-width: 1px;
+	background-image: url(images/lights.jpg);
+	background-position: 0px top;
+	padding: 70px 0px 0px 0px;
+	font-family: Tahoma, Arial, Verdana, sans-serif;
+	width: 940px;
+	direction: rtl;
+	background-repeat: no-repeat;
+	text-align: right;
+	color: #CCC;
+}
+
+.column01
+{
+	color: #666;
+	font-size: 10px;
+	line-height: 14px;
+	text-align: left;
+	float: right;
+	width: 103px;
+	padding-bottom: 2px;
+	margin-left: 16px;
+}
+.column02
+{
+	color: #CCC;
+	font-size: 12px;
+	line-height: 20px;
+	float: right;
+	width: 551px;
+}
+.column02 h1 {
+	margin:2px 0 12px;
+	padding:0;
+	font-weight:normal;
+	font-size:26px;
+}
+.column02 h1 a, .postColumn h3 a {
+	color:#2e2e2e;
+	text-decoration:none;
+}
+.column02 h2 {
+	padding:0;
+	margin:0 0 12px;
+	font-size:16px;
+	font-weight:normal;
+}
+
+.column02 h4 {
+	padding:0;
+	margin:0 0 12px;
+	font-size:14px;
+	font-weight:normal;
+}
+.column02 p {
+	margin:0 0 12px;
+}
+.postColumn h3
+{
+	margin: 2px 0 2px;
+	padding: 0 119px 0 0px;
+	font-size: 20px;
+	font-weight: normal;
+	font-family: 'B Zar' , Arial;
+}
+.postColumn h3 a
+{
+	color: #ccc;
+}
+.column03 {
+	float:right;
+	width:250px;
+	color:#2e2e2e;
+}
+.column03 form {
+	margin:0;
+	padding:0;
+}
+.search
+{
+	margin-right: 10px;
+	text-align: right;
+	padding-top: 9px;
+}
+.column03 .txtField
+{
+	border-style: none;
+	background: transparent;
+	color: #fff;
+	width: 166px;
+}
+.column03 .btnSearch
+{
+	border: 1px solid #565656;
+	color: #CCCCCC;
+	background: url(images/btnSearch-back.gif) repeat-x;
+	font-size: 11px;
+	width: 60px;
+	font-family: tahoma;
+	text-align: center;
+}
+	
+.upperSpacer
+{
+	display: block;
+	height: 19px;
+}
+
+/* navigation bar styles */
+
+#nav li
+{
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0pt;
+	overflow: hidden;
+	width: 100px;
+	font-size: 16px;
+	
+}
+
+#nav li a
+{
+	width: 100%;
+	padding-right: 6px;
+}
+
+#nav
+{
+	margin: 0pt;
+	padding: 0pt;
+	width: 500px;
+}
+
+.listMeta {
+	color:#666;
+	font-size:10px;
+	line-height:14px;
+	text-decoration:none;
+}
+
+#nav li, #nav a
+{
+	height: 42px;
+	text-decoration: none;
+	color: #CCCCCC;
+	float: right;
+}
+#nav li a:hover
+{
+	background-color: #003;
+}
+
+
+.activeMenu
+{
+	background-color: #000033;
+}
+
+.navBorder
+{
+	/* background-image: url(images/post-end.png); */
+	background-position: right top;
+	height: 2px;
+	background-repeat: no-repeat;
+	width: 100%;
+	font-size: 0px;
+}
+
+/* post styles */
+
+.postColumn
+{
+	background-position: 27px 109px;
+	float: right;
+	width: 670px;
+	background-image: url(  'images/border.jpg' );
+	background-repeat: no-repeat;
+}
+
+
+.post img, .post a img, .post p a img, .post p img 
+{
+	border: medium double #CCCCCC;
+	float: left;
+}
+.column01 a, .column01 div a
+{
+	color: #666;
+	text-decoration: none;
+}
+.column01 a:hover
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.postDetails
+{
+	background-position: left bottom;
+	line-height: 18px;
+	padding-bottom: 28px;
+	background-image: url( 'images/detail-end.gif' );
+	background-repeat: no-repeat;
+}
+.postEnd
+{
+	background-image: url(images/post-end.gif);
+	background-position: right;
+	height: 20px;
+	background-repeat: no-repeat;
+}
+.post
+{
+	padding-bottom: 20px;
+	overflow: hidden;
+	width: 515px;
+}
+.post a, .post p a
+{
+	color: #ccc;
+	text-decoration: none;
+	border-bottom: 1px solid #666;
+}
+.post a:hover {
+	border-style:none;
+}
+.about
+{
+	font-size: 11px;
+	line-height: 18px;
+	color: #CCCCCC;
+	direction: ltr;
+	text-align: left;
+}
+.fineprint
+{
+	font-size: 10px;
+	line-height: 16px;
+	color: #CCCCCC;
+}
+.about a, .fineprint a {
+	color:#cfcfcf;
+	text-decoration:none;
+	border-bottom:1px solid #555555;
+}
+.about a:hover, .fineprint a:hover {
+	color:#fff;
+	text-decoration:none;
+	border-style:none;
+}
+blockquote {
+	font-style:italic;
+	border-left:1px solid #C2C2C2;
+	padding:10px;
+	background-color:#000;
+}
+.postFooter
+{
+	text-align: left;
+}
+
+
+
+/* tab content styles (for tab styles check jquery.tabs.css) */
+
+.postList {
+	padding:0;
+	margin:0;
+	width:235px;
+}
+.postList li {
+	list-style:none;
+	margin:0;
+	border-bottom:1px solid #b1b1b1;
+}
+.postList a, .postList li a {
+	display:block;
+	width:215px;
+	padding:8px 10px;
+	color:#cccccc;
+	text-decoration:none;
+}
+.postList a:hover
+{
+	background-color: #003;
+}
+
+.postList a .listMeta {
+	color:#666;
+	font-size:10px;
+	line-height:14px;
+	text-decoration:none;
+}
+
+.postListSingle
+{
+	padding: 0;
+	margin: 0;
+	width: 235px;
+	color: #003399;
+}
+.postListSingle li {
+	list-style:none;
+	margin:0;
+	border-bottom:1px solid #b1b1b1;
+}
+.postListSingle a, .postListSingle li a
+{
+	display: block;
+	width: 215px;
+	padding: 8px 20px 8px 0px;
+	color: #CCCCCC;
+	text-decoration: none;
+	background-image: url(images/bullet.gif);
+	background-position: 226px 50%;
+	background-repeat: no-repeat;
+}
+.postListSingle a:hover
+{
+	background-image: url(images/bullet-on.gif);
+	background-position: 222px 50%;
+	background-repeat: no-repeat;
+	background-color: #003;
+}
+
+
+/* webgardi */
+
+.feedburnerFeedBlock ul
+{
+	direction: rtl;
+	list-style: none;
+	margin: 0pt -26pt;
+	
+	list-style-position: inside;
+	color: #666;
+}
+.feedburnerFeedBlock a
+{
+	color: #CCC;
+	text-decoration:none;
+}
+
+.feedburnerFeedBlock ul li
+{
+	display:block;
+	width:215px;
+	padding:8px 10px;
+	border-bottom: 1px solid #b1b1b1;
+}
+
+.feedburnerFeedBlock ul li:hover
+{
+	background-color: #000033;
+}
+
+#creditfooter
+{
+	display: none;
+}
+
+
+
+/* comments */
+
+#commentsArea {
+	font-size:11px;
+	line-height:16px;
+	padding:12px 0;
+}
+#commentsArea form {
+	margin:0;
+	padding:0;
+}
+.commentlist {
+	font-size:11px;
+	line-height:18px;
+	margin:0;
+	padding:0;
+}
+.commentlist li
+{
+	border-color: #666;
+	background: url(images/stripeComment.gif) no-repeat bottom right;
+	padding: 10px 0;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+.note {
+	font-size:10px;
+	color:#979995;
+}
+.commentLeft {
+	float:right;
+	width:170px;
+	overflow:hidden;
+}
+.commentLeft p, .commentRight p {
+	margin:0 0 10px;
+}
+.commentLeft input, .commentRight textarea
+{
+	margin: 3px 0 0;
+	color: #CCCCCC;
+	background: #000;
+	border: 1px solid #898989;
+	padding: 2px;
+	font-size: 11px;
+	font-family: tahoma;
+}
+.commentRight {
+	float:right;
+	width:260px;
+	overflow:hidden;
+}
+.btnComment
+{
+	border: 1px solid #565656;
+	color: #CCCCCC;
+	background: url(images/btnSearch-back.gif) repeat-x;
+	font-size: 11px;
+	padding: 3px 6px;
+	font-family: tahoma;
+}

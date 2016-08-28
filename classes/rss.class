@@ -1,0 +1,53 @@
+<?php
+	class RSS 
+	  { 
+	    public function RSS() 
+	    { 
+	    } 
+         
+	    public function GetFeed() 
+	    { 
+	        return $this->getDetails() . $this->getItems(); 
+	    } 
+	         
+	    private function dbConnect() 
+	    { 
+	        DEFINE ('LINK', mysql_connect ("localhost", "bargwebn_diaco", "Dyaco8464")); 
+	    } 
+	         
+	    private function getDetails() 
+	    {
+		$details = '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> 
+				<channel> 
+				<atom:link href="http://feeds.feedburner.com/barg" rel="self" type="application/rss+xml" />
+				<title>برگ</title> 
+				<link>http://www.bargweb.net</link> 
+				<description>www.BargweB.net</description>
+				<language>fa</language>'; 
+	        return $details; 
+	    } 
+	         
+	    private function getItems() 
+	    { 
+	        $itemsTable = "barg_entries"; 
+	        $this->dbConnect($itemsTable); 
+			$query = "SELECT * FROM ". $itemsTable." ORDER BY addedDate DESC LIMIT 0, 10;";
+			mysql_query("SET NAMES 'utf8'");
+	        $result = mysql_db_query ("bargwebn_barg", $query, LINK); 
+	        $items = ''; 
+	        while($row = mysql_fetch_array($result)) 
+	        { 
+			$row[bText] = str_replace("images/", "http://www.bargweb.net/images/", $row[bText]);
+            $items .= '<item> 
+	                <title>'.$row[title].'</title> 
+	                <link>http://www.bargweb.net/?mode=3&amp;id='.$row[id].'</link> 
+					<description><![CDATA['. $row[bText] .']]></description>
+					<guid isPermaLink="true">http://www.bargweb.net/?mode=3&amp;id='.$row[id].'</guid>
+					<comments>http://www.bargweb.net/?mode=3&amp;id='.$row[id].'#Comments</comments>
+					<pubDate>'.date('D, d M Y h:i:s', strtotime($row[addedDate])).' GMT</pubDate> 
+	            </item>'; 
+	        } 
+	        $items .= '</channel> 
+	                </rss>'; 
+	        return $items; 
+	    } }?>

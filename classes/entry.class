@@ -1,0 +1,57 @@
+<?php
+require_once( "row_manager.class" );
+require_once( "format_string.class" );
+
+/*	"March 28, 2008"	*/
+
+class entry extends row_manager
+{
+	private function numOfComments()
+	{
+		$sql = "SELECT COUNT(id) FROM barg_comments WHERE ent_id = ".$this->row["id"].";"; 
+		$result = mysql_query($sql); 
+		$iRow = mysql_fetch_row($result); 
+		return $iRow[0];
+	}
+	
+	public function categories($separator)
+	{
+		$cats = "";
+		$catIndex = 0;
+		$sql = "SELECT barg_categories.cat FROM barg_entstocats LEFT JOIN barg_categories ON barg_entstocats.catID = barg_categories.id
+				WHERE (barg_entstocats.entID = ".$this->row["id"].") LIMIT 0 , 30;";
+		$result = mysql_query($sql);
+		$catIndex = mysql_num_rows($result);
+		if($catIndex != 0)
+		{
+			for ($i = 1; $i < $catIndex; $i++) 
+			{
+				$iCategory = mysql_fetch_assoc($result);
+				$cats .= $iCategory[cat].$separator;
+			}
+			$iCategory = mysql_fetch_assoc($result);
+			$cats .= $iCategory[cat];
+		}
+		return $cats;
+	}
+	
+	function numOfComm( $zeroComment, $oneComment, $moreComment )
+	{
+		$i = $this->numOfComments();
+		if($i == 1)
+		{
+			return $oneComment;
+		}
+		elseif($i > 1)
+		{
+			$f_s = new format_string();
+			$i = $f_s->convertNumbersToFarsi( $i );
+			return str_replace("%", $i, $moreComment);
+		}
+		else
+		{
+			return $zeroComment;
+		}
+	}
+}
+?>

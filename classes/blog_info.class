@@ -1,0 +1,83 @@
+<?php
+require_once( "format_string.class" );
+
+class blog_info
+{
+	private $blogInfo;
+	function __construct()
+	{
+		global $blogInfo;
+		$sql = "SELECT * FROM barg_info WHERE id = 1;";
+		mysql_query("SET NAMES 'utf8' " );
+		$result = mysql_query($sql);
+		$blogInfo = mysql_fetch_assoc($result);
+	}
+	
+	function getTitle()
+	{
+		if(isset($_GET['mode']))
+{
+		if($_GET['mode'] == "2")
+		{
+			return "آرشیو برگ | ".format_string::jalali_month_name($_GET['month'])." ".format_string::convertNumbersToFarsi($_GET['year']);
+		}
+		elseif($_GET['mode'] == "3")
+		{
+			$sTitle = "SELECT title FROM barg_entries WHERE id='$_GET[id]';";
+			mysql_query("SET NAMES 'utf8' " );
+			$titleResult = mysql_query($sTitle);
+			$nesfeshab = mysql_fetch_assoc($titleResult);
+			return "برگ | ".$nesfeshab['title'];
+		}
+		elseif($_GET['mode'] == "about")
+		{
+			return "دریاره‌ی برگ";}
+		elseif($_GET['mode'] == "contact")
+		{
+			return "برگ || تماس با من";}
+}
+		else
+		{
+			return "برگ";
+		}
+	}
+	
+	function archive($format)
+	{
+		global $blogInfo;
+		$f_s = new format_string();
+		return $f_s->formatArchive( $blogInfo['addedDate'], $format );
+	}
+	function getInfo($columnName)
+	{
+		global $blogInfo;
+		return $blogInfo[$columnName];
+	}
+	
+	function getFavorists()
+	{
+		$favsql = "SELECT barg_favorists.ent_id, barg_entries.title FROM barg_favorists, barg_entries WHERE barg_favorists.ent_id = barg_entries.id ORDER BY rating DESC;";
+		$favresult = mysql_query($favsql);
+		$numrows_fav = mysql_num_rows($favresult);
+		$strFavorists = "";
+		if($numrows_fav == 0) 
+		{
+			$strFavorists .= "<li>No favorists</li>";
+		}
+		else
+		{
+			while($favrow = mysql_fetch_assoc($favresult)) 
+			{
+				$strFavorists .= "<li><a class='ArchiveLink' href=?mode=3&amp;id=".$favrow[ent_id].">".$favrow[title]."</a></li>";
+			}
+		}
+		return	$strFavorists;
+	}
+	
+	function getDate($format)
+	{
+		$f_s = new format_string();
+		return $f_s->formatAddedDate( "now", $format );
+	}
+}
+?>

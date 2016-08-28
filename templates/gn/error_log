@@ -1,0 +1,12 @@
+[02-Jan-2010 14:12:32] PHP Fatal error:  Call to undefined function  wp_title() in /home/bargwebn/public_html/templates/gn/header.php on line 5
+[31-Jan-2010 21:18:57] PHP Fatal error:  Call to undefined function  wp_title() in /home/bargwebn/public_html/templates/gn/header.php on line 5
+[31-Jan-2010 21:19:18] PHP Fatal error:  Call to undefined function  wp_title() in /home/bargwebn/public_html/templates/gn/header.php on line 5
+[05-May-2011 14:03:34] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/gn/header.php on line 5
+[05-May-2011 14:04:40] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/gn/header.php on line 5
+[21-Aug-2011 19:49:21] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/gn/header.php on line 5
+[21-Aug-2011 20:14:24] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/gn/header.php on line 5
+[21-Aug-2011 20:14:24] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/gn/header.php on line 5
+[21-Aug-2011 20:14:25] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/gn/header.php on line 5
+[21-Aug-2011 20:14:26] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/gn/header.php on line 5
+[23-Jan-2012 11:29:01] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/gn/header.php on line 5
+[08-Oct-2012 17:27:24] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/gn/header.php on line 5

@@ -1,0 +1,98 @@
+<?php
+require_once( "convert_date.class" );
+
+class format_string
+{
+	function convertNumbersToFarsi($matches) {
+		if (isset($matches)) {
+			return str_replace(
+				array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."),
+				array("۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹", "/"),
+				$matches);
+		}
+		return $matches;
+	}
+	
+	function jalali_month_name($j_m_n)
+	{
+		$Months_name = array("فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند") ;
+		$j_m_n = $Months_name[$j_m_n - 1];
+		return $j_m_n;
+	}
+	
+	function formatAddedDate( $addedDate, $format )
+	{
+		$c_d = new convert_date();
+		$j_date = $c_d->gregorian_to_jalali(date("Y",strtotime($addedDate)), date("n",strtotime($addedDate)), date("j",strtotime($addedDate)));
+		$week_day = array("دوشنبه", "سه‌شنبه" , "چهارشنبه", "پنج‌شنبه", "جمعه", "شنبه", "یکشنبه");
+		$wd = $week_day[date("N", strtotime($addedDate))-1];
+		$j_date[1] = $this->jalali_month_name($j_date[1]);
+		$j_date[0] = $this->convertNumbersToFarsi($j_date[0]);
+		$j_date[2] = $this->convertNumbersToFarsi($j_date[2]);
+		
+		$formatCh		= array("j", "l", "F", "Y");
+		$dateElements	= array($j_date[2], $wd, $j_date[1], $j_date[0]);
+
+		$format = str_replace($formatCh, $dateElements, $format);
+		
+		return $format;
+	}
+	
+	function formatArchive( $addedDate, $format )
+	{
+		if ($format == "monthly_2" )
+		{
+			$b_y = date("Y", strtotime($addedDate));
+			$b_m = date("n", strtotime($addedDate));
+			$b_d = date("j", strtotime($addedDate));
+			
+			$c_d = new convert_date();
+			
+			$begin = $c_d->gregorian_to_jalali($b_y, $b_m, $b_d);
+			$today = $c_d->gregorian_to_jalali(date('Y'), date('n'), date('j'));
+			$archive = "";
+			while($today[0] > $begin[0])
+			{
+				$archive .= "<a href='/?mode=2&year=".$today[0]."&month=".$today[1]."'>".$this->jalali_month_name($today[1])." ".$this->convertNumbersToFarsi($today[0]);
+				if($today[1] == 1){ $today[1]=12; $today[0]=$today[0]-1;}
+				else{ $today[1] = $today[1] - 1; } 
+				$archive .= "</a><br />\n"; 
+			} 
+			while($today[1] >= $begin[1])
+			{
+				$archive .= "<a href='/?mode=2&year=".$today[0]."&month=".$today[1]."'>".$this->jalali_month_name($today[1])." ".$this->convertNumbersToFarsi($today[0]);
+				$today[1] = $today[1] - 1; 
+				$archive .= "</a><br />\n";
+			}
+		}
+		
+		elseif ($format == "monthly")
+		{
+			$b_y = date("Y", strtotime($addedDate));
+			$b_m = date("n", strtotime($addedDate));
+			$b_d = date("j", strtotime($addedDate));
+			
+			$c_d = new convert_date();
+			
+			$begin = $c_d->gregorian_to_jalali($b_y, $b_m, $b_d);
+			$today = $c_d->gregorian_to_jalali(date('Y'), date('n'), date('j'));
+			$archive = "";
+			while($today[0] > $begin[0])
+			{
+				$archive .= "<li><a href='?mode=2&year=".$today[0]."&month=".$today[1]."'>".$this->jalali_month_name($today[1])." ".$this->convertNumbersToFarsi($today[0]);
+				if($today[1] == 1){ $today[1]=12; $today[0]=$today[0]-1;}
+				else{ $today[1] = $today[1] - 1; } 
+				$archive .= "</a></li>\n"; 
+			} 
+			while($today[1] >= $begin[1])
+			{
+				$archive .= "<li><a href='?mode=2&year=".$today[0]."&month=".$today[1]."'>".$this->jalali_month_name($today[1])." ".$this->convertNumbersToFarsi($today[0]);
+				$today[1] = $today[1] - 1; 
+				$archive .= "</a></li>\n";
+			}
+		}
+		
+		return $archive;
+	}
+}
+?>

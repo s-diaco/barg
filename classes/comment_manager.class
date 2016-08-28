@@ -1,0 +1,20 @@
+<?php
+require_once("item_manager.class");
+
+/*	"April 03, 2008"	*/
+
+class comment_manager extends item_manager
+{
+	function __construct($post_id)
+	{
+		$this->getComments($post_id);
+	}
+	
+	private function getComments($post_id)
+	{
+		$sql = "SELECT * FROM barg_comments WHERE ent_id = ".$post_id." ORDER BY addedDate DESC;";	
+		$this->resource = mysql_query($sql);
+		$this->nRows = mysql_num_rows($this->resource);
+	}
+}
+?>

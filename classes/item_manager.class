@@ -1,0 +1,38 @@
+<?php
+
+/*	Child classes must have a constructor having "$resources = mysql_query()" and "$nRows = mysql_num_rows()" function.
+	"April 03, 2008"	*/
+
+class item_manager
+{
+	protected	$currentRow = 0;
+	protected	$resource;
+	protected	$nRows;
+	
+	function haveItems()
+	{
+		if( $this->nRows > $this->currentRow )
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	function toNextItem()
+	{
+		$this->currentRow++;
+	}
+	
+	function getResource()
+	{
+		return $this->resource;
+	}
+	function getPointer()
+	{
+		return $this->currentRow;
+	}
+}	
+?>

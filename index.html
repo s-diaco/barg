@@ -1,0 +1,146 @@
+<?php 
+require_once("config.php"); $db = mysql_connect($dbhost, $dbuser, $dbpassword);
+mysql_query("SET NAMES 'utf8' " );
+mysql_select_db($dbdatabase, $db);
+include_once("classes/convert_date.class");
+include_once("classes/blog_info.class");        $b_i = new blog_info();
+require_once("classes/entries_manager.class");  $b_e = new entries_manager($b_i->getInfo("nEntries"));
+require_once("classes/entry.class");            $e;
+
+function wp_title()
+{
+    global $b_i;
+    echo $b_i->getTitle();
+}
+function have_posts()
+{
+    global $b_e;
+    return $b_e->haveItems();
+}
+function the_post()
+{
+    global $e, $b_e;
+    $e = new entry( $b_e->getResource(), $b_e->getPointer() );
+    $b_e->toNextItem();
+}
+function the_time($format)
+{
+    global $e;
+    echo $e->getAddedDate($format);
+}
+function the_ID()
+{
+    global $e;
+    echo $e->getColumn("id");
+}
+function the_title()
+{
+    global $e;
+    echo $e->getColumn("title");
+}
+function the_content()
+{
+    global $e;
+    echo $e->getColumn("bText");
+}
+function the_author()
+{
+    global $e;
+    echo $e->getColumn("sender");
+}
+function comments_popup_link($zeroComment, $oneComment, $moreComment)
+{
+    global $e;
+    echo $e->numOfComm($zeroComment, $oneComment, $moreComment);
+}
+function wp_get_archives($format)
+{
+    global  $b_i;
+    echo    $b_i->archive($format); 
+}
+function language_attributes(){echo "";}
+function bloginfo()
+{echo "";}
+function wp_head(){echo "";}
+function __()
+{echo "";}
+function get_option($string)
+{echo "http://www.bargweb.com";}
+define("TEMPLATEPATH", "templates/diaco");
+function the_search_query(){echo "search";}
+function the_permalink()
+{
+    global $e;
+    echo "http://www.bargweb.com/?mode=3&id=".$e->getColumn("id");
+}
+function the_category($separator)
+{
+    global $e;
+    $cats = $e->categories($separator);
+    if ($cats != "")
+    {
+        echo "در دسته‌ی:<br />".$cats."<br />";
+    }
+}
+function next_posts_link()
+{
+    global $b_e;
+    echo "<a href='http://www.bargweb.com/?mode=3&id=".$b_e->blogColumns(id)."'>next post</a>";
+}
+function previous_posts_link()
+{
+    global $b_e;
+    echo "<a href='http://www.bargweb.com/?mode=3&id=".$b_e->blogColumns(id)."'>prev post</a>";
+}
+function query_posts($string)
+{
+    global $b_e;
+    $b_e->query_posts($string);
+}
+function wp_list_categories()
+{
+    echo "</ul><li><a href='http://www.bargweb.com/?mode=3&id='>first cat</a></li>
+    <li><a href='http://www.bargweb.com/?mode=3&id='>second cat</a></li>
+    <li><a href='http://www.bargweb.com/?mode=3&id='>third cat</a></li>
+    <li><a href='http://www.bargweb.com/?mode=3&id='>fourth cat</a></li>";
+}
+function get_header()
+{
+    require_once ("templates/gothamNights/header.php");
+}
+function get_sidebar()
+{
+    require("templates/gothamNights/sidebar.php");
+} 
+function fav_entries()
+{
+    global $b_i;
+    echo $b_i->getFavorists();
+}
+function comments_template()
+{
+    global $b_i, $e;
+    require_once("templates/".$b_i->getInfo('templateName')."/comments.php");
+}
+if(isset($_GET['mode']))
+{
+if($_GET['mode'] == "3")
+{require_once ("templates/".$b_i->getInfo('templateName')."/single.php");}
+elseif($_GET['mode'] == "2")
+{
+    require_once ("templates/".$b_i->getInfo('templateName')."/archive.php");
+}
+elseif($_GET['mode'] == "about")
+{
+    require_once ("templates/".$b_i->getInfo('templateName')."/about.php");
+}
+elseif($_GET['mode'] == "contact")
+{
+    require_once ("templates/".$b_i->getInfo('templateName')."/contact.php");
+}
+}
+else
+{
+    require_once("templates/".$b_i->getInfo('templateName')."/index.php");
+}
+?>

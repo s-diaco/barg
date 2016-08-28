@@ -1,0 +1,8 @@
+[03-Apr-2008 04:37:07] PHP Fatal error:  Call to undefined function  wp_title() in /home/bargwebn/public_html/Templates/diaco/index.php on line 7
+[11-Jun-2008 10:25:29] PHP Warning:  require_once(../../classes/search.class) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/bargwebn/public_html/templates/diaco/search.php on line 2
+[11-Jun-2008 10:25:29] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../../classes/search.class' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/bargwebn/public_html/templates/diaco/search.php on line 2
+[21-Aug-2011 19:49:24] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/diaco/index.php on line 7
+[21-Aug-2011 20:18:58] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/diaco/index.php on line 7
+[21-Aug-2011 20:18:58] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/diaco/index.php on line 7
+[21-Aug-2011 20:18:59] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/diaco/index.php on line 7
+[21-Aug-2011 20:18:59] PHP Fatal error:  Call to undefined function  wp_title() in /home1/bargwebn/public_html/templates/diaco/index.php on line 7

@@ -1,0 +1,302 @@
+﻿body
+{
+	background-color: #DCDEED;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+div
+{
+	padding: 0px;
+	margin: 0px;
+	border-width: 0px;
+}
+.menu1
+{
+	color: #1A36E0;
+	width: 196px;
+	border-width: 1px;
+	border-color: #3399ff;
+	text-align: center;
+	border-style: solid;
+	font-size: xx-small;
+	font-family: Tahoma;
+	background-image: url(../images/but.bmp);
+	background-position: right;
+	background-repeat: no-repeat;
+	background-color: #F8F9FF;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+.menu2
+{
+	color: #1A36E0;
+	border-width: 1px;
+	border-color: #3399ff;
+	text-align: left;
+	direction: rtl;
+	border-style: solid;
+	font-size: xx-small;
+	font-family: Tahoma;
+	width: 555px;
+	background-image: url(../images/but.bmp);
+	background-position: right;
+	background-repeat: no-repeat;
+	background-color: #F8F9FF;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+.menuCont1
+{
+	color: #1A36E0;
+	border-width: 1px;
+	border-color: #3399ff;
+	width: 196px;
+	text-align: center;
+	border-style: solid;
+	font-family: Tahoma;
+	background-color: #F8F9FF;
+	overflow: hidden;
+}
+.menuCont2
+{
+	direction: rtl;
+	border-width: 1px;
+	border-color: #3399ff;
+	border-style: solid;
+	color: #1A36E0;
+	background-color: #F8F9FF;
+	width: 555px;
+	overflow: hidden;
+}
+.menuTitle
+{
+	color: #1A36E0;
+	padding-right: 5px;
+	font-weight: bold;
+	text-align: right;
+	text-decoration: none;
+	font-family: 'B Zar' , 'Times New Roman';
+	margin-top: 20px;
+	margin-bottom: 1px;
+}
+.text
+{
+	text-align: right;
+	padding: 0px 19px 0px 20px;
+	font-family: Tahoma;
+	font-size: small;
+	color: #3B3B3B;
+	line-height: 23px;
+}
+.textFoot
+{
+	text-align: center;
+	font-family: Tahoma;
+	font-size: x-small;
+	color: #1A36E0;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.header
+{
+	height: 49px;
+	background-image: url(../images/hdr.gif);
+	background-repeat: no-repeat;
+}
+.main
+{
+	 width: 798px}
+.sh
+{
+	width: 798px;
+	background-repeat: repeat-y;
+	background-image: url(../images/sh.gif);
+	display: inline-block;
+}
+.mainDiv
+{
+	width: 768px;
+	background-color: #edf0ff;
+}
+.lPanel
+{
+	vertical-align: top;
+	float: left;
+	margin-left: 5px;
+}
+.cmts
+{
+	border:solid 1px #1A36E0; background-color: #F8F9FF}
+.rPanel
+{
+	vertical-align: top;
+	float: left;
+	margin-left: 3px;
+}
+.btm
+{
+	background-color: #dcdeed;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-color: #1a36e0;
+	font-size: 8pt;
+	color: #1a36e0;
+	font-family: Tahoma;
+	height: 37px;
+	text-align: left;
+	margin-top: 5px;
+	display: inline-block;
+	width: 768px;
+}
+.Archive
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	direction: rtl;
+	text-align: center;
+}
+.ArchiveLink img
+{
+	border: 0px;
+}
+.cmtPanel
+{
+	direction: rtl;
+	border-width: 1px;
+	border-color: #3399ff;
+	width: 554px;
+	border-style: solid;
+	color: #1A36E0;
+}
+.cmtPanelUp
+{
+	color: #1A36E0;
+	margin-bottom: 2px;
+	border-width: 1px;
+	border-color: #3399ff;
+	text-align: center;
+	direction: rtl;
+	border-style: solid;
+	font-size: xx-small;
+	font-family: Tahoma;
+	width: 554px;
+	background-image: url(../images/but.bmp);
+	background-position: right;
+	background-repeat: no-repeat;
+	background-color: #F8F9FF;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	margin-top: 3px;
+}
+.lblComment
+{
+	font-family:Tahoma; font-size:small; padding: 6px; color: #3B3B3B}
+.bargMenu
+{
+	font-family: Tahoma; font-size: small; color: #3B3B3B; text-decoration: none}
+.hr
+{
+	margin: 6px 0px 6px 0px;
+	background-position: center;
+	background-image: url(../images/hr.bmp);
+	background-repeat: no-repeat;
+	height: 1px;
+}
+.dataList
+{
+	text-align:center}
+.CmtAddedDate
+{
+	font-family: Tahoma; font-size: 9pt; color: #F8F9FF; text-align: left; direction: ltr}
+.CmtSender
+{
+	font-family: Tahoma; font-size: 9pt; color: #F8F9FF; direction: rtl}
+.URL
+{
+	font-family: Tahoma; font-size: x-small; font-weight: bold; margin-right: 10px; text-decoration: none}
+.cif
+{
+	font-size: 10pt; font-family: Tahoma}
+.cil
+{
+	border-color: #3399FF; border-style: solid; border-width: 1px; width: 250px; font-family: Tahoma}
+.cmtsu
+{
+	margin-bottom: 2px;
+	background: #1a36e0 url(../images/butCmt.bmp) no-repeat right;
+	padding-right: 2px;
+}
+.EnFa
+{
+	font-size: small; font-family: Tahoma; color: #1A36E0; text-align: center; width: 90px;}
+.btm2
+{
+	border-style: none;
+	height: 14px;
+	background-image: url(../images/btm.jpg);
+	background-repeat: no-repeat;
+}
+.menuCont1 a
+{
+	font-family: Tahoma;
+	font-size: 9pt;
+	color: #1A36E0;
+	text-decoration: none;
+}
+.menuCont1 a:hover
+{
+	color: #3B3B3B;
+}
+
+.menuCont1 ul
+{
+	list-style-type: none;
+	direction: rtl;
+	text-align: center;
+	text-indent: -40px;
+}
+.feedburnerFeedBlock
+{
+	font-size: 9pt;
+	text-align: right;
+	direction: rtl;
+	list-style-position: outside;
+	line-height: 19px;
+}
+.feedburnerFeedBlock ul li
+{
+	margin-top: 4px;
+}
+.feedburnerFeedBlock ul li span a
+{
+	color: #1A36E0;
+	text-decoration: none;
+}
+.feedburnerFeedBlock ul
+{
+	padding-right: 20px;
+	margin-right: 0px;
+	text-indent: 0px;
+}
+.feedburnerFeedBlock #creditfooter
+{
+	display: none;
+}
+.text a
+{
+	text-decoration: none;
+}
+.textFoot a
+{
+	text-decoration: none;
+}
+.entryImage
+{
+	border: medium double #3B3B3B;
+	float: left;
+}
+

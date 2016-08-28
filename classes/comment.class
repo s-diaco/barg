@@ -1,0 +1,6 @@
+<?php
+require_once("row_manager.class");
+class comment extends row_manager
+{
+}
+?>

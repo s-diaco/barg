@@ -1,0 +1,5 @@
+[21-Aug-2011 19:49:24] PHP Fatal error:  Call to undefined function  get_header() in /home1/bargwebn/public_html/templates/gothamNights/index.php on line 1
+[21-Aug-2011 20:19:59] PHP Fatal error:  Call to undefined function  get_header() in /home1/bargwebn/public_html/templates/gothamNights/index.php on line 1
+[21-Aug-2011 20:19:59] PHP Fatal error:  Call to undefined function  get_header() in /home1/bargwebn/public_html/templates/gothamNights/index.php on line 1
+[21-Aug-2011 20:20:00] PHP Fatal error:  Call to undefined function  get_header() in /home1/bargwebn/public_html/templates/gothamNights/index.php on line 1
+[21-Aug-2011 20:20:01] PHP Fatal error:  Call to undefined function  get_header() in /home1/bargwebn/public_html/templates/gothamNights/index.php on line 1
